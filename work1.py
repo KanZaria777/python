@@ -1,8 +1,19 @@
-test_list = [-89, None, 56, 56.56, False]
+number1 = float(input("Insert the number: "))
+number2 = float(input("Insert the number: "))
 
-def type_definition(el):
-    for el in range(len(test_list)):
-        print(type(test_list[el]))
-    return
+def division(num1, num2):
+    '''
+        Эта функция выдает результат деления двух чисел.
+    '''
+    try:
+        result = num1 / num2
+        if num1 % num2 != 0:
+            print(f"Division result: {result:.2f}")
+        else:
+            result = int(result)
+            print(f"Division result: {result}")
+    except ZeroDivisionError:
+        print("I am very sorry, it will not be possible to divide by zero.")
 
-type_definition(test_list)
+division(number1, number2)
+

@@ -1,18 +1,25 @@
-seasons_list = ['winter', 'spring', 'summer', 'autumn']
-seasons_dict = {1 : 'winter', 2 : 'spring', 3 : 'summer', 4 : 'autumn'}
-month = int(input("Enter the month number: "))
+'''
+numberOne = float(input("Enter the first number: "))
+numberTwo = float(input("Enter the second number: "))
+numberThree = float(input("Enter the third number: "))
+'''
 
-if month == 1 or month == 12 or month == 2:
-    print(seasons_dict.get(1))
-    print(seasons_list[0])
-elif month == 3 or month == 4 or month == 5:
-    print(seasons_dict.get(2))
-    print(seasons_list[1])
-elif month == 6 or month == 7 or month == 8:
-    print(seasons_dict.get(3))
-    print(seasons_list[2])
-elif month == 9 or month == 10 or month == 11:
-    print(seasons_dict.get(4))
-    print(seasons_list[3])
-else:
-    print("Такого месяца не существует")
+def sum (num1, num2, num3):
+    '''
+        Сумма двух больших значений
+        И последующее приведение результата в порядок
+    '''
+    #Верно ли я произвел комментирование функции или не по делу? То что она работает в Help() понятно.
+    if num1 >= num3 and num2 >= num3:
+        result = num1 + num2
+    elif  num1 > num2 and num1 < num3:
+        result = num1 + num3
+    else:
+        result =  num2 + num3
+
+    if result % 1 != 0:
+        print(f'{result:.2f}')
+    else:
+        print(int(result))
+
+sum(float(input("Enter the first number: ")), float(input("Enter the second number: ")), float(input("Enter the third number: ")))

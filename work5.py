@@ -1,20 +1,24 @@
-my_list = [1, 3, 5, 4, 9, 2, 56]
-print(f"Rating - {my_list}")
-#print("To exit enter <Leave>.")
-user_data = float(input("To exit dial - 666999.\nInsert the number: "))
+def addition_of_string_numbers():
+    sum = 0
+    condition = False
+    while condition == False:
+        stringNumber = input('Press K or k to exit.\nEnter your numbers separated by space: ')
+        # TODO дописать проверку строки на наличие только цифр
+        stringNumber = stringNumber.replace(' ', '')
+        # пришлось нагуглить этот метод, так сразу и не скажешь, что так можно было
+        tui = 0
+        for i in range(len(stringNumber)):
+            if stringNumber[i] == 'K' or stringNumber[i] == 'k':
+                condition = True
+                break
+            else:
+                tui = tui + int(stringNumber[i])
+                #TODO попробовать добавить float+  проверку для красивого результата
+    # tui переменная испльзуемая для вывода числа из цикла в функцию, так сказать временный вариант
+        sum = sum + tui
+        print(f'Current sum is {sum}.')
+    print(f'Your final sum is {sum}.')
 
-while user_data != 666999:
-    #if float.is_integer(user_data): Попытка реализовать ввод цифр с плавающей точкой
-        #int(user_data) к сожалению пока не удачно
-    for el in range(len(my_list)):
-        if my_list[el] == user_data:
-            my_list.insert(el + 1, user_data)
-            break
-        elif my_list[0] < user_data:
-            my_list.insert(0, user_data)
-        elif my_list[-1] > user_data:
-            my_list.append(user_data)
-        elif my_list[el] > user_data and my_list[el +1] < user_data:
-            my_list.insert(el + 1, user_data)
-    print(f"Current list - {my_list}")
-    user_data = int(input("Insert the number: "))
+addition_of_string_numbers()
+
+
