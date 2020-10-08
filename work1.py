@@ -1,19 +1,11 @@
-number1 = float(input("Insert the number: "))
-number2 = float(input("Insert the number: "))
+from sys import argv
 
-def division(num1, num2):
-    '''
-        Эта функция выдает результат деления двух чисел.
-    '''
-    try:
-        result = num1 / num2
-        if num1 % num2 != 0:
-            print(f"Division result: {result:.2f}")
-        else:
-            result = int(result)
-            print(f"Division result: {result}")
-    except ZeroDivisionError:
-        print("I am very sorry, it will not be possible to divide by zero.")
+name_script, working_hours, rate_per_hour, award = argv
 
-division(number1, number2)
+def salary(*argv):
+    print((int(working_hours) * int(rate_per_hour)) + int(award))
+
+salary(*argv)
+
+
 

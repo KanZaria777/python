@@ -1,25 +1,14 @@
+from random import randrange
+
+print(sorted(list({el for el in range(20, 241) if el % 21 == 0 or el % 20 == 0})))
+
 '''
-numberOne = float(input("Enter the first number: "))
-numberTwo = float(input("Enter the second number: "))
-numberThree = float(input("Enter the third number: "))
+Ниже представлен вариант сортировки для удобства и дальнейшего использования гдето
+my_set = {el for el in range(20, 241) if el % 21 == 0 or el % 20 == 0}
+my_list = list(my_set)
+Это в две
+my_list.sort()
+print(my_list)
+Это в одну строку
+print(sorted(my_list))
 '''
-
-def sum (num1, num2, num3):
-    '''
-        Сумма двух больших значений
-        И последующее приведение результата в порядок
-    '''
-    #Верно ли я произвел комментирование функции или не по делу? То что она работает в Help() понятно.
-    if num1 >= num3 and num2 >= num3:
-        result = num1 + num2
-    elif  num1 > num2 and num1 < num3:
-        result = num1 + num3
-    else:
-        result =  num2 + num3
-
-    if result % 1 != 0:
-        print(f'{result:.2f}')
-    else:
-        print(int(result))
-
-sum(float(input("Enter the first number: ")), float(input("Enter the second number: ")), float(input("Enter the third number: ")))
