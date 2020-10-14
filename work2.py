@@ -1,5 +1,19 @@
-data = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
+'''
+2. Создать текстовый файл (не программно),
+сохранить в нем несколько строк,
+выполнить подсчет количества строк,
+количества слов в каждой строке.
+'''
 
-sort_data = [data[el] for el in range(1, len(data)) if data[el-1] < data[el]]
+with open('work2.txt', 'r', encoding='UTF-8') as file_obj:
+    count_lines = 0
+    count_words = 0
 
-print(sort_data)
+    for line in file_obj:
+        count_lines += 1
+        line_words = len(line.strip().split()) # разобраться, что это значит
+        print(f'В {count_lines} строке - {line_words} слов.')
+        count_words += line_words
+
+    print(f'Всего строк в документе {count_lines}.')
+    print(f'Всего в документе {count_words} слов.')

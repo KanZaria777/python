@@ -1,11 +1,13 @@
-from sys import argv
+'''
+1. Создать программно файл в текстовом формате,
+записать в него построчно данные, вводимые пользователем.
+Об окончании ввода данных свидетельствует пустая строка.
+'''
 
-name_script, working_hours, rate_per_hour, award = argv
+with open('work1.txt', 'w', encoding='UTF-8') as file_obj:
+    a = True
+    while a:
+        a = input('Enter data to write to file:\n')
+        file_obj.write(f'{a} \n')
 
-def salary(*argv):
-    print((int(working_hours) * int(rate_per_hour)) + int(award))
-
-salary(*argv)
-
-
-
+#TODO добавить вывод содержимового
